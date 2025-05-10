@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yep Studios – Home</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1 id="secret-title">Yep Studios</h1>
+    <h1>Yep Studios</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="games.html">Games</a>
@@ -19,13 +18,24 @@
   </header>
   <main>
     <section>
-      <h2>Welcome to Yep Studios Offical Website</h2>
-      <p>Your go-to place for all our Roblox games and creative projects.</p>
-
-      <div id="banana-secret" style="display:none; text-align:center; margin-top:2rem;">
-        🍌 <p>You found the secret banana!</p>
-      </div>
+      <h2>Welcome!</h2>
+      <p>This is the official site of Yep Studios. Check out my Roblox games and discover secret stuff hidden on this page!</p>
     </section>
+  </main>
+  <footer>© 2025 Yep Studios</footer>
+
+  <script>
+    let clickCount = 0;
+    document.querySelector("h1").addEventListener("click", () => {
+      clickCount++;
+      if (clickCount === 3) {
+        alert("🍌 Secret banana unlocked!");
+      }
+    });
+  </script>
+</body>
+</html>
+
   </main>
   <footer>© 2025 Yep Studios</footer>
 </body>
