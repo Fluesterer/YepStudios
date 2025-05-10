@@ -1,4 +1,4 @@
-// script.js
+
 let clickCount = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
