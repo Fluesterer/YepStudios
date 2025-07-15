@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Yep Studios</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .category-toggle {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-toggle button {
+            padding: 0.6rem 1.2rem;
+            background: #4c1d95;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .category-toggle button.active {
+            background: #7c3aed;
+        }
+
+        .project-list {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .project-list.active {
+            display: block;
+        }
+
+        .project-card {
+            background: #1f1f1f;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+        }
+
+        .project-card h3 {
+            margin: 0;
+            color: #a855f7;
+        }
+
+        .project-card p {
+            margin-top: 0.5rem;
+            color: #ccc;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
+        Yep Studios
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="content-section">
+    <h1>Our Projects</h1>
+    <div class="category-toggle">
+        <button id="btn-games" class="active">Games</button>
+        <button id="btn-programs">Programs</button>
+    </div>
+
+    <div id="games" class="project-list active">
+        <div class="project-card">
+            <h3>Block Wars</h3>
+            <p>A multiplayer PvP game with strategy and fast-paced combat.</p>
+        </div>
+        <div class="project-card">
+            <h3>Space Run</h3>
+            <p>Endless runner through galaxies, dodge asteroids and upgrade your ship!</p>
+        </div>
+    </div>
+
+    <div id="programs" class="project-list">
+        <div class="project-card">
+            <h3>Yep Launcher</h3>
+            <p>A minimal launcher for all Yep Studios games and updates.</p>
+        </div>
+        <div class="project-card">
+            <h3>Code Organizer</h3>
+            <p>Simple desktop app to sort and tag your coding projects.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2022–2025 Yep Studios. All rights reserved.
+</footer>
+
+<script>
+    const btnGames = document.getElementById('btn-games');
+    const btnPrograms = document.getElementById('btn-programs');
+    const gamesList = document.getElementById('games');
+    const programsList = document.getElementById('programs');
+
+    btnGames.addEventListener('click', () => {
+        btnGames.classList.add('active');
+        btnPrograms.classList.remove('active');
+        gamesList.classList.add('active');
+        programsList.classList.remove('active');
+    });
+
+    btnPrograms.addEventListener('click', () => {
+        btnPrograms.classList.add('active');
+        btnGames.classList.remove('active');
+        programsList.classList.add('active');
+        gamesList.classList.remove('active');
+    });
+</script>
+
+</body>
+</html>
